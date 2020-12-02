@@ -18,12 +18,12 @@ namespace Advent.Solutions
                 for (int j = i + 1; j < input.Count; j++)
                 {
                     if (input[i] + input[j] == 2020)
-                        Console.WriteLine($"Answer for part 1 of DAY 1 is: {input[i] * input[j]}");
+                        Console.WriteLine($"[DAY 1] Answer for part 1 is: {input[i] * input[j]}");
 
                     for (int k = j + 1; k < input.Count; k++)
                     {
                         if (input[i] + input[j] + input[k] == 2020)
-                            Console.WriteLine($"Answer for part 2 of DAY 1 is: {input[i] * input[j] * input[k]}");
+                            Console.WriteLine($"[DAY 1] Answer for part 2 is: {input[i] * input[j] * input[k]}");
                     }
                 }
             }
