@@ -11,7 +11,8 @@ namespace Advent
             List<ISolution> tasks = new()
             {
                 new Day1(),
-                new Day2()
+                new Day2(),
+                new Day3()
             };
 
             foreach (var task in tasks)
