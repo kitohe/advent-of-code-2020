@@ -13,7 +13,8 @@ namespace Advent
                 new Day1(),
                 new Day2(),
                 new Day3(),
-                new Day4()
+                new Day4(),
+                new Day5()
             };
 
             foreach (var task in tasks)

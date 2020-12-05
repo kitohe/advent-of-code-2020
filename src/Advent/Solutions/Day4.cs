@@ -36,8 +36,8 @@ namespace Advent.Solutions
                     ansPart1++;
             }
 
-            Console.WriteLine($"[DAY 3] Answer for part 1 is: {ansPart1}");
-            Console.WriteLine($"[DAY 3] Answer for part 2 is: {ansPart2}");
+            Console.WriteLine($"[DAY 4] Answer for part 1 is: {ansPart1}");
+            Console.WriteLine($"[DAY 4] Answer for part 2 is: {ansPart2}");
         }
 
         private bool CheckValidEntry(string key, string value)
