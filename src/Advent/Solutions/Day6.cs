@@ -48,16 +48,12 @@ namespace Advent.Solutions
                     for (int i = 1; i < splitted.Length; i++)
                     {
                         if (splitted[i].Contains(l))
-                        {
                             hitCount++;
-                        }
                     }
 
                     if (hitCount == splitted.Length)
                         ansPart2++;
                 }
-
-                
             }
 
             Console.WriteLine($"[DAY 6] Answer for part 1 is: {ansPart1}");
