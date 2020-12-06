@@ -13,7 +13,7 @@ namespace Advent.Solutions
 
         public async Task Solve()
         {
-            var lines = FuseMultiLine(await FileOperations.ReadAllLines(FilePath));
+            var lines = FileOperations.FuseMultiLine(await FileOperations.ReadAllLines(FilePath));
 
             var ansPart1 = 0;
             var ansPart2 = 0;
@@ -74,34 +74,6 @@ namespace Advent.Solutions
                 return number >= min && number <= max;
 
             return false;
-        }
-
-        private static IEnumerable<string> FuseMultiLine(IReadOnlyList<string> lines)
-        {
-            List<string> ans = new();
-
-            string currentLine = "";
-
-            for (int i = 0; i < lines.Count; i++)
-            {
-                if (string.IsNullOrEmpty(lines[i]))
-                {
-                    if (string.IsNullOrEmpty(currentLine))
-                        continue;
-
-                    ans.Add(currentLine);
-                    currentLine = "";
-                    continue;
-                }
-                if (string.IsNullOrEmpty(currentLine))
-                    currentLine += lines[i];
-                else
-                    currentLine += " " + lines[i];
-            }
-
-            ans.Add(currentLine);
-
-            return ans;
         }
     }
 }
