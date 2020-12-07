@@ -20,7 +20,7 @@ namespace Advent.Solutions
             CountContentsOfBag("shiny gold", lines, 1, 1);
             
             Console.WriteLine($"[DAY 7] Answer for part 1 is: {_ansPart1}");
-            Console.WriteLine($"[DAY 7] Answer for part 1 is: {_ansPart2}");
+            Console.WriteLine($"[DAY 7] Answer for part 2 is: {_ansPart2}");
         }
 
         private void CountBagsContaingBagName(string bagName, string[] lines)
