@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Advent.Solutions.Helper;
 
@@ -25,28 +26,30 @@ namespace Advent.Solutions
             Console.WriteLine($"[DAY 8] Answer for part 1 is: {_accumulator}");
             
             BruteForce(lines);
-            Console.WriteLine($"[DAY 8] Answer for part 2 is:: {_accumulator}");
+            Console.WriteLine($"[DAY 8] Answer for part 2 is: {_accumulator}");
         }
 
         private void BruteForce(string[] instructions)
         {
-            string[] localInstructions = new string[instructions.Length];
             for (int i = 0; i < instructions.Length; i++)
             {
-                instructions.CopyTo(localInstructions, 0);
                 _instructionsExecuted.Clear();
                 _accumulator = 0;
                 _programCounter = 0;
+
+                var temp = instructions[i];
                 
-                if (localInstructions[i].StartsWith("nop"))
-                    localInstructions[i] = "jmp" + localInstructions[i].Substring(3);
-                else if (localInstructions[i].StartsWith("jmp"))
-                    localInstructions[i] = "nop" + localInstructions[i].Substring(3);
+                if (instructions[i].StartsWith("nop"))
+                    instructions[i] = "jmp" + instructions[i].Substring(3);
+                else if (instructions[i].StartsWith("jmp"))
+                    instructions[i] = "nop" + instructions[i].Substring(3);
                 else
                     continue;
                 
-                if (RunProgram(localInstructions))
+                if (RunProgram(instructions))
                     return;
+
+                instructions[i] = temp;
             }
         }
         
